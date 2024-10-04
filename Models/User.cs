@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace TechStore.Models;
 
+[Table("user")]
 public class User
 {
     [Key]
@@ -14,16 +15,25 @@ public class User
     [Column("id")]
     public int Id { get; set; }
     [Column("name")]
-    public required string Name { get; set; }
+    public string Name { get; set; }
     [Column("lastname")]
-    public required string LastName { get; set; }
+    public string LastName { get; set; }
     [Column("role")]
     public bool Role { get; set; }
     [Column("email")]
-    public required string Email { get; set; }
+    public string Email { get; set; }
     [Column("password")]
-    public required string Password { get; set; }
+    public string Password { get; set; }
 
+
+    public User(string name, string lastName, bool role, string email, string password)
+    {
+        Name = name.ToLower().Trim();
+        LastName = lastName.ToLower().Trim();
+        Role = role;
+        Email = email.ToLower().Trim();
+        Password = password;
+    }
 
 
 }

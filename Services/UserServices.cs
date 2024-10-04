@@ -10,7 +10,7 @@ namespace TechStore.Services;
 
 public class UserServices : IUserRepository
 {
-    private readonly ApplicationDbContext _context;
+    public readonly ApplicationDbContext _context;
     public UserServices(ApplicationDbContext context)
     {
         _context = context;

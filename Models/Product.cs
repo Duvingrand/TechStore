@@ -15,14 +15,21 @@ public class Product
     [Column("id")]
     public int Id { get; set; }
     [Column("name")]
-    public required string Name { get; set; }
+    public string Name { get; set; }
     [Column("price")]
     public double Price { get; set; }
     [Column("description")]
-    public required string Description { get; set; }
+    public string Description { get; set; }
     [Column("categoryId")]
     public int CategoryId { get; set; }
     [JsonIgnore]
     [ForeignKey("CategoryId")]
     public Categorie? Category { get; set; }
+
+    public Product(string name, double price, string description, int categoryId){
+        Name = name.ToLower().Trim();
+        Price = price;
+        Description = description;
+        CategoryId = categoryId;
+    }
 }

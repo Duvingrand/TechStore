@@ -28,4 +28,11 @@ public class Order
     [ForeignKey("StatusId")]
     public OrderStatus? OrderStatus { get; set; }
 
+    public Order(int clientId, int statusId){
+        Id=Guid.NewGuid();
+        ClientId = clientId;
+        Date = DateTime.Now;
+        StatusId = statusId;
+    }
+
 }

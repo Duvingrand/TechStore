@@ -5,8 +5,8 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace TechStore.Models
-{
+namespace TechStore.Models;
+
     [Table("category")]
     public class Categorie
     {
@@ -15,6 +15,9 @@ namespace TechStore.Models
         [Column("id")]
         public int Id { get; set; }
         [Column("name")]
-        public required string Name { get; set;}
+        public string Name { get; set;}
+
+        public Categorie(string name){
+            Name = name.ToLower().Trim();
+        }
     }
-}

@@ -9,17 +9,16 @@ namespace TechStore.Data;
 
 public class ApplicationDbContext : DbContext
 {
+    public DbSet<User> Users { get; set; }
+    public DbSet<Client> Clients { get; set; }
+    public DbSet<Categorie> Categories { get; set; }
+    public DbSet<OrderStatus> OrderStatues { get; set; }
+    public DbSet<Order> Orders { get; set; }
+    public DbSet<Product> Products { get; set; }
+    public DbSet<ProductsInOrder> ProductsInOrders { get; set; }
     public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
-        : base(options)
+    : base(options)
     {
     }
-
-    public DbSet<User> Users { get; set; }
-    public DbSet<Order> Orders {get; set; }
-    public DbSet<Client> Clients {get; set; }
-    public DbSet<OrderStatus> OrderStatues {get; set; }
-    public DbSet<Product> Products {get; set; }
-    public DbSet<ProductsInOrder> ProductsInOrders {get; set; }
-    public DbSet<Categorie> Categories {get; set; }
 
 }
